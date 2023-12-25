@@ -79,7 +79,7 @@ header{
     justify-content: center;
 }
 
-.header-top p{
+.header-top a{
     font-size: 6rem;
     font-weight: 400;
 }
@@ -106,10 +106,13 @@ nav a{
 }
 
 .sec-1{
-    font-size: 4vw;
+    margin-bottom: 40px;
+}
+
+.sec-1 p{
+    font-size: clamp(35px,4vw,70px);
     color: rgb(195, 195, 195);
     text-align: center;
-    margin-bottom: 40px;
 }
 
 .sec-2{
@@ -147,7 +150,7 @@ nav a{
 
 .sec-2-para-1{
     width: 590px;
-    max-width: 90%;
+    max-width: 80%;
     margin: auto;
     margin-bottom: 40px;
 }
@@ -516,7 +519,7 @@ footer{
         justify-content: space-between;
     }
 
-    .header-top p{
+    .header-top a{
         font-size: 45px;
         margin-left: 5vw;
     }
@@ -531,7 +534,7 @@ footer{
            left: 25vw;
         }
 
-        .header-top p{
+        .header-top a{
             position: relative;
             left: 3.5vw;  
         }
@@ -539,7 +542,7 @@ footer{
     }
 
     @media(max-width:345px){
-        .header-top p{
+        .header-top a{
             font-size: 12vw;    
         }
     }
@@ -577,6 +580,20 @@ footer{
         display: none;
     }
 }
+
+@media(max-width:550px){
+    .sec-2-para-1 p{
+        font-size: 20px;
+        text-align: center;  
+    }
+
+    .sec-2-para-1{
+        max-width: 75%;
+    }
+
+}
+
+
 
 
 /* js for sec 4 */
