@@ -92,6 +92,7 @@ nav{
     margin-top: 20px;
     font-size: 12px;
     font-weight: 500;
+    /* transition: 1s ease; */
 }
 
 nav ul{
@@ -500,7 +501,7 @@ footer{
 
 
 
-/* js for header */
+/* MQ for header */
 
 @media(max-width:1190px){
     .vertical-sec{
@@ -511,8 +512,38 @@ footer{
         width: 100vw;
     }
 
-    nav{
-        display: none;
+    .nav-block{
+        opacity: 0;
+        transition: opacity ease 0.8s;
+        height: 90vw;
+        width: 70vw;
+        position: fixed;
+        margin: 0;
+        z-index: -10;
+    }
+
+    .nav-block.active{
+        opacity: 1;
+        z-index: 10;
+    }
+
+    .nav-block ul{
+        display: block;
+        width: 100%;
+        text-align: right;
+        background-color: rgba(29, 29, 29, 0.708);
+        padding-right: 10vw;
+    }
+
+    .nav-block li a{
+        color: white;
+        line-height: 3;
+        margin: 0;
+        font-size: 15px;
+    }
+
+    .nav-block li a:hover{
+        color: #023f29;
     }
 
     .header-top{
@@ -573,7 +604,7 @@ footer{
 }
 
 
-/* js for sec 2 */
+/* MQ for sec 2 */
 
 @media(max-width:1190px){
     .side-links{
@@ -596,7 +627,7 @@ footer{
 
 
 
-/* js for sec 4 */
+/* MQ for sec 4 */
 
 @media(max-width:579px){
     .sec-4-ul{
@@ -616,7 +647,7 @@ footer{
 }
 
 
-/* js for sec 5 */
+/* MQ for sec 5 */
 
 @media(max-width:1190px){
     .sec-5{

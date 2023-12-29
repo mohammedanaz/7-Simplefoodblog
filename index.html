@@ -36,14 +36,14 @@
                 <p><a href="">Simple food</a></p>
                 <div class="header-top-icons">
                     <i class="fa fa-search"></i>
-                    <div class="header-top-icons-menu">
+                    <div class="header-top-icons-menu" id="toggle-btn">
                         <span>MENU</span>
                         <i class="fa fa-bars"></i>
                     </div>   
                 </div>
             </div>
             
-            <nav>
+            <nav class="nav-block" id="drop-nav">
                 <ul>
                     <li><a href="">ALL RECIPES</a></li>
                     <li><a href="">HOME</a></li>
@@ -296,6 +296,16 @@
 
 
 
-   <script src="js/script.js"></script>
+   <script>
+    var toggleBtn = document.getElementById("toggle-btn");
+    var dropNav   = document.getElementById("drop-nav");
+
+    function clickMenu(){
+        dropNav.classList.toggle("active");
+    }
+    
+    toggleBtn.addEventListener("click",clickMenu);
+
+   </script>
 </body>
 </html>
