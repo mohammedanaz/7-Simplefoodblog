@@ -13,16 +13,16 @@
 
 
     <div class="vertical-sec">
-        <div class="vertical-sec-items">
+        
             <div class="vertical-sec-menu">
-                <span>MENU</span>
-                <i class="fa fa-bars"></i>
+                <p>MENU</p>
+                <i class="fa fa-bars" id="idMenu"></i>
             </div>  
             
             <div class="vertical-sec-search">
                 <i class="fa fa-search"></i>
             </div>
-        </div>
+        
         
     </div>
 
@@ -43,6 +43,18 @@
                 </div>
             </div>
             
+            <nav class="nav-inline">
+                <ul>
+                    <li><a href="">ALL RECIPES</a></li>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">SALADS</a></li>
+                    <li><a href="">SWEET THINGS</a></li>
+                    <li><a href="">VEGETABLES</a></li>
+                    <li><a href="">DINNER</a></li>
+                    <li><a href="">ABOUT</a></li>
+                </ul>
+            </nav>
+
             <nav class="nav-block" id="drop-nav">
                 <ul>
                     <li><a href="">ALL RECIPES</a></li>
@@ -56,6 +68,8 @@
             </nav>
             
         </header>
+      
+
 
          <!-- sec 1 starts -->
 
@@ -287,12 +301,12 @@
         <!-- sec 5 ends -->
         
 
-
+        <footer></footer>
 
      </div>
       <!-- main content ends -->
 
-      <footer></footer>
+      
 
 
 
@@ -305,7 +319,44 @@
     }
     
     toggleBtn.addEventListener("click",clickMenu);
-
+    
    </script>
+
+    
+   <script>
+    document.addEventListener("DOMContentLoaded",function(){
+        window.addEventListener("scroll",function(){
+            var toggleMenu = document.querySelector(".vertical-sec-menu");
+            var searchBtn = document.querySelector(".vertical-sec-search");
+            var dropNav = document.getElementById("drop-nav");
+
+            if (window.innerWidth > 1190 && (document.body.scrollTop > 180 || document.documentElement.scrollTop > 180)){
+                toggleMenu.classList.add("appaer");
+                searchBtn.style.top = "80px";
+            }
+            else{
+                toggleMenu.classList.remove("appaer");
+                searchBtn.style.top = "30px";
+                
+            }
+
+            if (window.innerWidth > 1190 && document.documentElement.scrollTop <= 180){
+                dropNav.classList.remove("active");
+            }
+        });
+        
+              
+    });
+   </script>
+
+   <script>
+        var idMenu = document.getElementById("idMenu");
+        var dropNav = document.getElementById("drop-nav");
+
+        idMenu.addEventListener("click",function(){
+            dropNav.classList.toggle("active");
+        });
+   </script>
+
 </body>
 </html>

@@ -17,7 +17,7 @@ body,a,li{
 
 .vertical-sec{
     width: 4vw;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     top: 0;
     right: 0;
@@ -27,27 +27,37 @@ body,a,li{
     border-width: 2px;
 }
 
-.vertical-sec-items{
+/* .vertical-sec-items{
     position: relative;
-}
+} */
 
 .vertical-sec-menu{
+    text-align: center;
     position: fixed;
-    top: 30px;
+    top: -60px;
+    right: 1.2vw;
     cursor: pointer;
     opacity: 0;
-    transition: opacity 0.5 ease-in-out;
+    transition: opacity 0.8s ease;
+    z-index: -10;
 }
 
-.vertical-sec-menu .appaer{
+.vertical-sec-menu.appaer{
+    text-align: center;
+    position: fixed;
+    top: 30px;
+    right: 1.2vw;
+    cursor: pointer;
     opacity: 1;
+    z-index: 10;
+    transition: opacity 0.8s ease;327
 }
 
 .vertical-sec .fa-bars{
     font-size: 35px;
 }
 
-.vertical-sec span{
+.vertical-sec p{
     color: grey;
     font-size: 10px;
 }
@@ -55,9 +65,10 @@ body,a,li{
 .vertical-sec-search{
     position: fixed;
     top: 30px;
-    right: 20px;
-    font-size: 20px ;
+    right: 1.2vw;
+    font-size: 25px ;
     cursor: pointer;
+    transition: top 0.3s ease;
 }
 
 .main-sec{
@@ -87,12 +98,12 @@ header{
 .header-top-icons{
     display: none;
 }
+
 nav{
     width: 100%;
     margin-top: 20px;
     font-size: 12px;
     font-weight: 500;
-    /* transition: 1s ease; */
 }
 
 nav ul{
@@ -512,6 +523,10 @@ footer{
         width: 100vw;
     }
 
+    .nav-inline{
+        display: none;
+    }
+
     .nav-block{
         opacity: 0;
         transition: opacity ease 0.8s;
@@ -600,6 +615,50 @@ footer{
     .header-top-icons .fa-search{
         font-size: 20px;
         margin-right: 3vw;
+    }
+}
+
+@media(min-width:1189px){
+    .vertical-sec{
+        display: block;
+    }
+
+    .main-sec{
+        width: 96vw;
+    } 
+
+    .nav-block{
+        opacity: 0;
+        transition: opacity ease 0.8s;
+        height: 90vw;
+        width: 70vw;
+        position: fixed;
+        margin: 0;
+        z-index: -10;
+    }
+
+    .nav-block.active{
+        opacity: 1;
+        z-index: 10;
+    }
+
+    .nav-block ul{
+        display: block;
+        width: 100%;
+        text-align: right;
+        background-color: rgba(29, 29, 29, 0.708);
+        padding-right: 10vw;
+    }
+
+    .nav-block li a{
+        color: white;
+        line-height: 3;
+        margin: 0;
+        font-size: 15px;
+    }
+
+    .nav-block li a:hover{
+        color: #023f29;
     }
 }
 
